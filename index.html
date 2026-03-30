@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#1a362d" />
+    <meta
+      name="description"
+      content="Hotel Shri Krishna - A divine mountain retreat in Barkot, Uttarkashi, on the sacred Yamunotri route. Pure veg, farm-fresh dining & Char Dham Yatra hospitality."
+    />
+    <title>Hotel Shri Krishna | Divine Stay • Yamunotri Route</title>
+
+    <!-- Preconnect & Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --clr-deep: #1a362d; /* forest green */
+        --clr-gold: #c48b54; /* earthy gold / accent */
+        --clr-gold-dark: #a57242;
+        --clr-bg-light: #fcf9f4;
+        --clr-surface: #ffffff;
+        --clr-text: #2c2c2c;
+        --clr-text-muted: #5e6b66;
+        --clr-border: #e9e2d4;
+        --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.04);
+        --shadow-md: 0 20px 35px -12px rgba(26, 54, 45, 0.12);
+        --radius-card: 1.5rem;
+        --radius-sm: 1rem;
+        --transition: 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      }
+
+      html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: var(--clr-bg-light);
+        color: var(--clr-text);
+        line-height: 1.5;
+        overflow-x: hidden;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 clamp(1rem, 4vw, 2.5rem);
+      }
+
+      /* typography */
+      .tag {
+        display: inline-block;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        font-weight: 600;
+        color: var(--clr-gold);
+        background: rgba(196, 139, 84, 0.1);
+        padding: 0.3rem 0.9rem;
+        border-radius: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .section-title {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2rem, 5vw, 3rem);
+        font-weight: 700;
+        color: var(--clr-deep);
+        margin-bottom: 1rem;
+      }
+
+      .section-sub {
+        color: var(--clr-text-muted);
+        max-width: 700px;
+        margin: 0 auto 2.5rem auto;
+        font-size: 1rem;
+      }
+
+      .section {
+        padding: clamp(3rem, 8vw, 6rem) 0;
+      }
+
+      /* buttons */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.6rem;
+        padding: 0.8rem 1.8rem;
+        border-radius: 3rem;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: var(--transition);
+        cursor: pointer;
+        border: 1px solid transparent;
+      }
+
+      .btn-primary {
+        background: var(--clr-gold);
+        color: white;
+        box-shadow: 0 4px 10px rgba(196, 139, 84, 0.3);
+      }
+
+      .btn-primary:hover {
+        background: var(--clr-gold-dark);
+        transform: translateY(-2px);
+      }
+
+      .btn-outline {
+        border: 1px solid var(--clr-deep);
+        color: var(--clr-deep);
+        background: transparent;
+      }
+
+      .btn-outline:hover {
+        background: var(--clr-deep);
+        color: white;
+      }
+
+      /* header */
+      .header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(12px);
+        z-index: 1000;
+        transition: var(--transition);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .header.scrolled {
+        box-shadow: var(--shadow-sm);
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 80px;
+      }
+
+      .logo h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: var(--clr-deep);
+        letter-spacing: -0.3px;
+      }
+      .logo span {
+        font-size: 0.7rem;
+        display: block;
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        color: var(--clr-gold);
+        letter-spacing: 1px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .nav-links a {
+        font-weight: 500;
+        font-size: 0.9rem;
+        color: var(--clr-text);
+        transition: 0.2s;
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: var(--clr-gold);
+      }
+
+      .mobile-toggle {
+        display: none;
+        font-size: 1.6rem;
+        background: none;
+        border: none;
+        color: var(--clr-deep);
+        cursor: pointer;
+      }
+
+      /* hero */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        margin-top: 80px;
+        background: linear-gradient(
+            105deg,
+            rgba(0, 0, 0, 0.7) 0%,
+            rgba(26, 54, 45, 0.5) 100%
+          ),
+          url("https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format");
+        background-size: cover;
+        background-position: center 30%;
+      }
+
+      .hero-content {
+        max-width: 700px;
+        color: white;
+      }
+
+      .hero-title {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2.8rem, 7vw, 4.5rem);
+        line-height: 1.2;
+        margin: 1rem 0;
+      }
+      .hero-title span {
+        color: var(--clr-gold);
+        font-style: italic;
+      }
+      .hero-desc {
+        font-size: 1.1rem;
+        opacity: 0.9;
+        margin: 1rem 0 2rem;
+      }
+      .hero-stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.8rem;
+        margin-top: 2.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding-top: 1.5rem;
+      }
+      .hero-stats span {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.85rem;
+      }
+      .hero-stats i {
+        color: var(--clr-gold);
+      }
+
+      /* grid */
+      .grid-2cols {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+        align-items: center;
+      }
+
+      .feature-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.8rem;
+        margin-top: 2rem;
+      }
+      .feature-item {
+        display: flex;
+        gap: 1rem;
+      }
+      .feature-icon {
+        width: 48px;
+        height: 48px;
+        background: var(--clr-surface);
+        border-radius: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--clr-gold);
+        font-size: 1.3rem;
+        box-shadow: var(--shadow-sm);
+        flex-shrink: 0;
+      }
+
+      /* cards grid (rooms, amenities, dham) */
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .room-card,
+      .amenity-card,
+      .dham-card {
+        background: var(--clr-surface);
+        border-radius: var(--radius-card);
+        overflow: hidden;
+        transition: var(--transition);
+        border: 1px solid var(--clr-border);
+        box-shadow: var(--shadow-sm);
+      }
+      .room-card:hover,
+      .dham-card:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-md);
+      }
+      .room-img {
+        height: 220px;
+        background-size: cover;
+        background-position: center;
+      }
+      .room-info,
+      .amenity-info,
+      .dham-info {
+        padding: 1.5rem;
+      }
+      .price {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--clr-gold);
+      }
+      .amenity-card i {
+        font-size: 2rem;
+        color: var(--clr-gold);
+        margin-bottom: 1rem;
+      }
+      .dham-icon i {
+        font-size: 2rem;
+        color: var(--clr-gold);
+        margin-bottom: 1rem;
+      }
+      .distance-badge {
+        background: rgba(196, 139, 84, 0.12);
+        padding: 0.25rem 1rem;
+        border-radius: 2rem;
+        display: inline-block;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--clr-gold-dark);
+        margin-top: 0.8rem;
+      }
+
+      /* gallery grid */
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.2rem;
+        margin-top: 2rem;
+      }
+      .gallery-item {
+        border-radius: 1.2rem;
+        overflow: hidden;
+        aspect-ratio: 4/3;
+        cursor: pointer;
+      }
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+      .gallery-item:hover img {
+        transform: scale(1.03);
+      }
+
+      /* testimonials */
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+      .testi-card {
+        background: var(--clr-surface);
+        padding: 1.8rem;
+        border-radius: var(--radius-card);
+        border: 1px solid var(--clr-border);
+        box-shadow: var(--shadow-sm);
+      }
+      .testi-card i {
+        color: var(--clr-gold);
+        font-size: 1.8rem;
+        opacity: 0.6;
+        margin-bottom: 1rem;
+      }
+
+      /* contact */
+      .contact-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        background: var(--clr-surface);
+        border-radius: 2rem;
+        padding: 2rem;
+        box-shadow: var(--shadow-md);
+        border: 1px solid var(--clr-border);
+      }
+      .contact-detail {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1.8rem;
+      }
+      .contact-detail i {
+        font-size: 1.3rem;
+        color: var(--clr-gold);
+      }
+      input,
+      textarea {
+        width: 100%;
+        padding: 0.9rem 1rem;
+        border: 1px solid var(--clr-border);
+        border-radius: 1rem;
+        background: var(--clr-bg-light);
+        font-family: inherit;
+        transition: 0.2s;
+      }
+      input:focus,
+      textarea:focus {
+        outline: none;
+        border-color: var(--clr-gold);
+      }
+      .footer {
+        background: var(--clr-deep);
+        color: #e9e2d4;
+        padding: 3rem 0 2rem;
+        text-align: center;
+      }
+
+      @media (max-width: 860px) {
+        .grid-2cols,
+        .contact-wrapper {
+          grid-template-columns: 1fr;
+        }
+        .nav-links {
+          position: fixed;
+          top: 80px;
+          left: 0;
+          width: 100%;
+          background: white;
+          flex-direction: column;
+          padding: 2rem;
+          gap: 1.5rem;
+          box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+          transform: translateY(-120%);
+          opacity: 0;
+          transition: 0.3s;
+          z-index: 999;
+          border-bottom: 1px solid var(--clr-border);
+        }
+        .nav-links.active {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        .mobile-toggle {
+          display: block;
+        }
+        .hero-btns {
+          flex-direction: column;
+          width: 100%;
+        }
+        .btn {
+          width: 100%;
+          text-align: center;
+        }
+      }
+      @media (max-width: 480px) {
+        .hero-stats {
+          flex-direction: column;
+          gap: 0.8rem;
+        }
+        .contact-wrapper {
+          padding: 1.2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header" id="header">
+      <div class="container nav-container">
+        <div class="logo">
+          <h2>Hotel Shri Krishna<br /><span>Farms & Resorts</span></h2>
+        </div>
+        <button class="mobile-toggle" id="menuToggle">
+          <i class="fas fa-bars"></i>
+        </button>
+        <nav class="nav-links" id="navMenu">
+          <a href="#home" class="nav-link">Home</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#rooms" class="nav-link">Rooms</a>
+          <a href="#dham" class="nav-link">Char Dham</a>
+          <a href="#gallery" class="nav-link">Gallery</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="hero" id="home">
+        <div class="container">
+          <div class="hero-content">
+            <span
+              class="tag"
+              style="background: rgba(196, 139, 84, 0.2); color: #ffddb0"
+              >Yamunotri Route • Barkot</span
+            >
+            <h1 class="hero-title">
+              Retreat into <span>divine peace</span> in the Himalayas
+            </h1>
+            <p class="hero-desc">
+              A sacred haven for Char Dham pilgrims — pure vegetarian meals,
+              farm-fresh cuisine, river views and soulful hospitality on the way
+              to Yamunotri.
+            </p>
+            <div
+              class="hero-btns"
+              style="display: flex; gap: 1rem; flex-wrap: wrap"
+            >
+              <a href="#rooms" class="btn btn-primary">Explore Rooms</a>
+              <a
+                href="#contact"
+                class="btn btn-outline"
+                style="border-color: white; color: white"
+                >Book Your Stay</a
+              >
+            </div>
+            <div class="hero-stats">
+              <span
+                ><i class="fa-solid fa-location-dot"></i> 5 km from Yamunotri
+                motor road</span
+              >
+              <span
+                ><i class="fa-solid fa-leaf"></i> Organic Farm to Table</span
+              >
+              <span
+                ><i class="fa-solid fa-star"></i> 4.9 Rated • Pilgrim
+                Special</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section class="section" id="about">
+        <div class="container grid-2cols">
+          <div>
+            <span class="tag">Our Story</span>
+            <h2 class="section-title">Where mountains meet the river Yamuna</h2>
+            <p style="color: var(--clr-text-muted); margin-bottom: 1.2rem">
+              Nestled along the sacred Yamunotri highway, Hotel Shri Krishna
+              Farms & Resorts offers more than a stay — we offer a spiritual
+              pause. Wake up to misty peaks, savor organic meals plucked from
+              our own farmland, and receive warm support for your Yatra journey.
+            </p>
+            <div class="feature-list">
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fa-solid fa-utensils"></i>
+                </div>
+                <div>
+                  <strong>Pure Veg • Farm Fresh</strong><br /><span
+                    style="font-size: 0.85rem"
+                    >Sattvic meals grown in our own fields, served with
+                    devotion.</span
+                  >
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fa-solid fa-hand-holding-heart"></i>
+                </div>
+                <div>
+                  <strong>Yatra Assistance 24/7</strong><br /><span
+                    style="font-size: 0.85rem"
+                    >Taxi, puja arrangements, local guides & heli bookings
+                    support.</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="about-img">
+            <img
+              src="/IMG/view1.png"
+              alt="Resort view"
+              style="
+                border-radius: 1.8rem;
+                box-shadow: var(--shadow-md);
+                width: 100%;
+              "
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Rooms Section -->
+      <section class="section" id="rooms" style="background: #ffffff">
+        <div class="container">
+          <div style="text-align: center">
+            <span class="tag">Peaceful Stays</span>
+            <h2 class="section-title">
+              Sacred comfort after a day of blessings
+            </h2>
+            <p class="section-sub">
+              Modern amenities, warm interiors and panoramic mountain views —
+              designed for pilgrims & explorers.
+            </p>
+          </div>
+          <div class="card-grid">
+            <div class="room-card">
+              <div
+                class="room-img"
+                style="
+                  background-image: url('/IMG/room1.jpg');
+                "
+              ></div>
+              <div class="room-info">
+                <h3>Deluxe Mountain View</h3>
+                <p>
+                  Spacious room with private balcony, breathtaking valley views,
+                  king-size bed, electric kettle, attached bath with 24/7 hot
+                  water.
+                </p>
+                <div class="price">
+                  ₹5,500 <span style="font-size: 0.9rem">/ night</span>
+                </div>
+                <div
+                  style="
+                    margin: 1rem 0 0.5rem;
+                    display: flex;
+                    gap: 1rem;
+                    flex-wrap: wrap;
+                  "
+                >
+                  <span><i class="fa-solid fa-wifi"></i> WiFi</span>
+                  <span><i class="fa-solid fa-tv"></i> LED TV</span>
+                  <span><i class="fa-solid fa-mug-hot"></i> Tea/Coffee</span>
+                </div>
+                <a
+                  href="#contact"
+                  class="btn btn-primary"
+                  style="margin-top: 1rem; width: 100%; text-align: center"
+                  >Inquire Now</a
+                >
+              </div>
+            </div>
+            <div class="room-card">
+              <div
+                class="room-img"
+                style="
+                  background-image: url('/IMG/resort.jpg');
+                "
+              ></div>
+              <div class="room-info">
+                <h3>Superior Valley Room</h3>
+                <p>
+                  Cozy and elegantly furnished, river-facing windows, premium
+                  linens, orthopedic mattress, and modern ensuite.
+                </p>
+                <div class="price">
+                  ₹4,500 <span style="font-size: 0.9rem">/ night</span>
+                </div>
+                <div style="margin: 1rem 0 0.5rem">
+                  <span><i class="fa-solid fa-shower"></i> Hot water 24/7</span>
+                  &nbsp;•&nbsp;
+                  <span
+                    ><i class="fa-regular fa-snowflake"></i> Room heater</span
+                  >
+                </div>
+                <a
+                  href="#contact"
+                  class="btn btn-primary"
+                  style="margin-top: 1rem; width: 100%; text-align: center"
+                  >Book Now</a
+                >
+              </div>
+            </div>
+            <div class="room-card">
+              <div
+                class="room-img"
+                style="
+                  background-image: url('/IMG/view2.jpg');
+                "
+              ></div>
+              <div class="room-info">
+                <h3>Family Suite</h3>
+                <p>
+                  Ideal for families or groups — two interconnected rooms, extra
+                  space, valley views, and modern amenities.
+                </p>
+                <div class="price">
+                  ₹6,800 <span style="font-size: 0.9rem">/ night</span>
+                </div>
+                <div>
+                  <i class="fa-solid fa-people-group"></i> Up to 5 guests
+                </div>
+                <a
+                  href="#contact"
+                  class="btn btn-primary"
+                  style="margin-top: 1rem; width: 100%"
+                  >Check Availability</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Char Dham Gateway Section (information from both files) -->
+      <section class="section" id="dham" style="background: #faf7f0">
+        <div class="container">
+          <div style="text-align: center">
+            <span class="tag">Gateway to Pilgrimage</span>
+            <h2 class="section-title">Your base for Char Dham Yatra</h2>
+            <p class="section-sub">
+              Strategically located in Barkot, we offer easy access to the four
+              sacred abodes. Let us help you with transportation & yatra
+              guidance.
+            </p>
+          </div>
+          <div class="card-grid">
+            <div class="dham-card">
+              <div class="dham-info">
+                <i
+                  class="fa-solid fa-mountain"
+                  style="font-size: 2rem; color: var(--clr-gold)"
+                ></i>
+                <h3>Yamunotri</h3>
+                <p>
+                  Source of the Yamuna River & sacred temple dedicated to
+                  Goddess Yamuna. Starting point of the divine journey.
+                </p>
+                <div class="distance-badge">
+                  <i class="fa-solid fa-road"></i> ~42 km from resort
+                </div>
+              </div>
+            </div>
+            <div class="dham-card">
+              <div class="dham-info">
+                <i
+                  class="fa-solid fa-water"
+                  style="font-size: 2rem; color: var(--clr-gold)"
+                ></i>
+                <h3>Gangotri</h3>
+                <p>
+                  Origin of the holy Ganga river, where Goddess Ganga descended.
+                  Mesmerizing high-altitude temple.
+                </p>
+                <div class="distance-badge">
+                  <i class="fa-solid fa-car"></i> ~175 km
+                </div>
+              </div>
+            </div>
+            <div class="dham-card">
+              <div class="dham-info">
+                <i
+                  class="fa-solid fa-pray"
+                  style="font-size: 2rem; color: var(--clr-gold)"
+                ></i>
+                <h3>Kedarnath</h3>
+                <p>
+                  One of the 12 Jyotirlingas, dedicated to Lord Shiva. A
+                  profound spiritual experience amidst the Himalayas.
+                </p>
+                <div class="distance-badge">
+                  <i class="fa-solid fa-route"></i> ~210 km
+                </div>
+              </div>
+            </div>
+            <div class="dham-card">
+              <div class="dham-info">
+                <i
+                  class="fa-solid fa-temple"
+                  style="font-size: 2rem; color: var(--clr-gold)"
+                ></i>
+                <h3>Badrinath</h3>
+                <p>
+                  Sacred abode of Lord Vishnu, situated on the banks of
+                  Alaknanda river — vibrant and divine.
+                </p>
+                <div class="distance-badge">
+                  <i class="fa-solid fa-map-location-dot"></i> ~245 km
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Amenities Section -->
+      <section class="section" id="amenities">
+        <div class="container">
+          <div style="text-align: center">
+            <span class="tag">Thoughtful Comforts</span>
+            <h2 class="section-title">Crafted for your peace & wellness</h2>
+          </div>
+          <div class="card-grid">
+            <div class="amenity-card">
+              <i class="fa-solid fa-mountain-sun"></i>
+              <h3>Valley Views</h3>
+              <p>Every room offers panoramic Himalayan or river views.</p>
+            </div>
+            <div class="amenity-card">
+              <i class="fa-solid fa-wifi"></i>
+              <h3>High-Speed WiFi</h3>
+              <p>Stay connected even in the serene mountains.</p>
+            </div>
+            <div class="amenity-card">
+              <i class="fa-solid fa-car"></i>
+              <h3>Travel Support</h3>
+              <p>Taxi, chopper booking & yatra guidance 24x7.</p>
+            </div>
+            <div class="amenity-card">
+              <i class="fa-solid fa-mug-hot"></i>
+              <h3>Spiritual Lounge</h3>
+              <p>Meditation area, books, and evening chai with Ganga jal.</p>
+            </div>
+            <div class="amenity-card">
+              <i class="fa-solid fa-hand-sparkles"></i>
+              <h3>Pure Veg Kitchen</h3>
+              <p>Sattvic, organic & Jain meals available on request.</p>
+            </div>
+            <div class="amenity-card">
+              <i class="fa-solid fa-shield-heart"></i>
+              <h3>24/7 Hot Water</h3>
+              <p>
+                Geysers & solar backup — constant hot water for your comfort.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery -->
+      <section class="section" id="gallery" style="background: #fff">
+        <div class="container">
+          <div style="text-align: center">
+            <span class="tag">Memories</span>
+            <h2 class="section-title">A glimpse into paradise</h2>
+          </div>
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img
+                src="https://images.unsplash.com/photo-1545158535-c3f7168c28b6?q=80&w=800&auto=format"
+                alt="River view"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="https://images.unsplash.com/photo-1625244724120-1fd1d34d00f6?q=80&w=800&auto=format"
+                alt="Mountain sunset"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="/IMG/room2.jpg"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="/IMG/night view.jpg"
+                alt="Dining area"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials (combined from both files) -->
+      <section class="section" style="background: #f2efe8">
+        <div class="container">
+          <div style="text-align: center">
+            <span class="tag">Pilgrim Voices</span>
+            <h2 class="section-title">What guests say</h2>
+          </div>
+          <div class="testimonials-grid">
+            <div class="testi-card">
+              <i class="fa-solid fa-quote-left"></i>
+              <p>
+                "Fantastic experience. One of the best resort I have ever visited. All the staff members are fantastic especially Mr Gulshan Singh Rana's hospitality was beyond imagination. Food quality was also fantastic."
+              </p>
+              <strong>— Rakesh Priyadarshi</strong>
+            </div>
+            <div class="testi-card">
+              <i class="fa-solid fa-quote-left"></i>
+              <p>
+                "This is a good place to stay and the service here is very good as well. It is at a good location from where one can see beautiful hills and river. I hope you will have a good experience here."
+              </p>
+              <strong>— Neeraj Singh</strong>
+            </div>
+            <div class="testi-card">
+              <i class="fa-solid fa-quote-left"></i>
+              <p>
+                "I remember the moment when I was sitting at courtyard of this resort bandarpoonch mountains(Yamuna glaciers) was clearly visible and ma Yamuna was flowing down there in valley.Feeling like sitting in havean, very peaceful,beauty,.staff was very good,cleanliness superb and food was very delicious 😋"
+              </p>
+              <strong>— 
+                Amit Jayara</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="section" id="contact">
+        <div class="container">
+          <div style="text-align: center">
+            <span class="tag">Plan your yatra</span>
+            <h2 class="section-title">Reserve your sacred stay</h2>
+          </div>
+          <div class="contact-wrapper">
+            <div>
+              <div class="contact-detail">
+                <i class="fa-solid fa-location-dot"></i>
+                <div>
+                  <strong>Address</strong><br />Barkot, Uttarkashi,
+                  Uttarakhand<br />(On Yamunotri Highway, near motor road)
+                </div>
+              </div>
+              <div class="contact-detail">
+                <i class="fa-solid fa-phone"></i>
+                <div>
+                  <strong>Call / WhatsApp</strong><br /><a
+                    href="tel:+919368401088"
+                    style="color: var(--clr-gold)"
+                    >+91 78951 31294</a
+                  ><br />+91 9368401088
+                </div>
+              </div>
+              <div class="contact-detail">
+                <i class="fa-solid fa-envelope"></i>
+                <div>
+                  <strong>Email</strong><br /><a
+                    href="mailto:shrikrishnafarmsresorts@gmail.com"
+                    >shrikrishnafarmsresorts@gmail.com</a
+                  >
+                </div>
+              </div>
+              <div class="contact-detail">
+                <i class="fa-regular fa-clock"></i>
+                <div>
+                  <strong>Yatra Support</strong><br />24/7 assistance for taxi,
+                  puja, accommodation
+                </div>
+              </div>
+            </div>
+            <form id="contactForm">
+              <input type="text" placeholder="Full Name *" required />
+              <input
+                type="tel"
+                placeholder="Phone Number *"
+                required
+                style="margin-top: 1rem"
+              />
+              <input
+                type="email"
+                placeholder="Email (optional)"
+                style="margin-top: 1rem"
+              />
+              <textarea
+                rows="3"
+                placeholder="Your Yatra plans / questions..."
+                required
+                style="margin-top: 1rem"
+              ></textarea>
+              <button
+                type="submit"
+                class="btn btn-primary"
+                style="width: 100%; margin-top: 1.5rem"
+              >
+                Send Inquiry <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <i
+          class="fa-solid fa-tree"
+          style="font-size: 1.6rem; color: var(--clr-gold); margin-bottom: 1rem"
+        ></i>
+        <h3 style="font-family: 'Playfair Display'">
+          Hotel Shri Krishna Farms & Resorts
+        </h3>
+        <p style="margin: 0.5rem 0">
+          A divine haven on the Yamunotri route — where nature meets devotion.
+        </p>
+        <div
+          style="
+            margin: 1.5rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+          "
+        >
+          <i class="fab fa-facebook-f"></i><i class="fab fa-instagram"></i
+          ><i class="fab fa-whatsapp"></i>
+        </div>
+        <p>
+          © 2026 Hotel Shri Krishna | All rights reserved | Char Dham
+          Hospitality
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // mobile menu toggle
+      const menuToggle = document.getElementById("menuToggle");
+      const navMenu = document.getElementById("navMenu");
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        const icon = menuToggle.querySelector("i");
+        if (navMenu.classList.contains("active")) {
+          icon.classList.remove("fa-bars");
+          icon.classList.add("fa-times");
+        } else {
+          icon.classList.remove("fa-times");
+          icon.classList.add("fa-bars");
+        }
+      });
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          navMenu.classList.remove("active");
+          const icon = menuToggle.querySelector("i");
+          icon.classList.remove("fa-times");
+          icon.classList.add("fa-bars");
+        });
+      });
+
+      // header scroll effect
+      window.addEventListener("scroll", () => {
+        const header = document.getElementById("header");
+        if (window.scrollY > 50) header.classList.add("scrolled");
+        else header.classList.remove("scrolled");
+      });
+
+      // form alert
+      const form = document.getElementById("contactForm");
+      if (form) {
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          alert(
+            "✨ Thank you! Your pilgrimage inquiry has been received. Our team will reach out within 2 hours."
+          );
+          form.reset();
+        });
+      }
+
+      // active link highlight based on scroll (simple)
+      const sections = document.querySelectorAll("section[id]");
+      window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop - 120;
+          if (scrollY >= sectionTop) current = section.getAttribute("id");
+        });
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${current}`)
+            link.classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>
